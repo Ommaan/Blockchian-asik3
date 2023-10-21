@@ -1,4 +1,5 @@
 import React from 'react';
+import {Box, Button, Flex, Image, Link, Spacer} from '@chakra-ui/react';
 
 const NavBar = ({accounts, setAccounts }) => {
     const isConnected = Boolean(accounts[0]);
@@ -12,19 +13,41 @@ const NavBar = ({accounts, setAccounts }) => {
         }
     }
     return (
-        <div>
+        <Flex
+        justify="space-around"
+        align="center"
+        width="40px"
+        padding="30px"
+        >
             {/* Right Side of navbar */}
-            <div>About</div>
-            <div>Mint</div>
-            <div>Team</div>
+            <Box margin="0 15px">About</Box>
+            <Spacer />
+            <Box margin="0 15px">Mint</Box>
+            <Spacer />
+            <Box margin="0 15px">Team</Box>
+            <Spacer />
 
             {/* Connect */}
             {isConnected ? (
-                <p>Connected</p>
+                <Box margin="0 15px">Connected</Box>
             ) : (
-                <button onClick={connectAccount}>Connect</button>
+                <Button
+                 backgroundColor="#DAF7A6"
+                 borderRadius="5px"
+                 boxShadow="0px 2px 2px 1px #0F0F0F"
+                 color="white"
+                 cursor="pointer"
+                 fontFamily="inherit"
+                 padding="15px"
+                 margin="0 15px"
+                 onClick={connectAccount}
+                 >
+                    Connect
+                 </Button>
             )}
-        </div>
+
+        <Flex/>
+      </Flex>
         )
 
      
